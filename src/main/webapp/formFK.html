@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Inserisci Marche e Categorie</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+body {
+	margin: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(to bottom, #f5f5f7, #e8e8ea);
+}
+
+/* Navbar */
+.navbar {
+	justify-content: center;
+	background-color: #ffffff;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.navbar .nav-link {
+	color: #1d1d1f;
+	font-weight: 500;
+	transition: color 0.2s;
+}
+
+.navbar .nav-link:hover {
+	color: #0071e3;
+}
+
+.navbar-brand {
+	color: #1d1d1f;
+	font-weight: bold;
+	font-size: 1.3rem;
+	transition: color 0.2s;
+}
+
+.navbar-brand:hover {
+	color: #0071e3;
+}
+
+/* Forms wrapper */
+.forms-wrapper {
+	display: flex;
+	gap: 30px;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 40px 20px;
+}
+
+/* Contenitore form */
+.form-container {
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 25px;
+	padding: 40px 60px;
+	text-align: center;
+	flex: 1 1 250px;
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.form-container:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+	margin-bottom: 25px;
+	color: #0071e3;
+	font-size: 1.8rem;
+	font-weight: 600;
+}
+
+/* Input */
+input[type="text"] {
+	display: block;
+	width: 300px;
+	margin: 15px auto;
+	padding: 12px 15px;
+	font-size: 16px;
+	border-radius: 12px;
+	border: 1px solid #d1d1d6;
+	outline: none;
+	transition: 0.3s all;
+	background-color: #fafafa;
+}
+
+input[type="text"]:focus {
+	border-color: #0071e3;
+	box-shadow: 0 0 8px rgba(0, 113, 227, 0.25);
+	background-color: #fff;
+}
+
+/* Bottone */
+button {
+	background: linear-gradient(135deg, #0071e3, #005bb5);
+	color: #fff;
+	border: none;
+	border-radius: 14px;
+	padding: 12px 30px;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 20px;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+button:hover {
+	opacity: 0.9;
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+</style>
+</head>
+
+<body>
+
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="home.html">Home</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse justify-content-center"
+			id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="Avvio?scelta=2">Tabella</a>
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button"
+						data-toggle="dropdown" aria-expanded="false">
+						Operazioni
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="formFK.html">Inserisci Marche/Categorie</a>
+						<a class="dropdown-item" href="Avvio?scelta=0">Inserisci Prodotti</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="Avvio?scelta=2">Visualizza Tabella</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="forms-wrapper">
+  <!-- FORM CATEGORIE -->
+  <div class="form-container">
+    <h2>Categorie</h2>
+    <form action="AvvioCategoria" method="post">
+      <input type="hidden" name="scelta" value="1">
+      <input type="text" placeholder="Inserisci una Categoria" name="nomeCategoria" required>
+      <button type="submit">Invia</button>
+    </form>
+  </div>
+
+  <!-- FORM MARCHE -->
+  <div class="form-container">
+    <h2>Marche</h2>
+    <form action="AvvioMarca" method="post">
+      <input type="hidden" name="scelta" value="1">
+      <input type="text" placeholder="Inserisci una Marca" name="nomeMarca" required>
+      <button type="submit">Invia</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
